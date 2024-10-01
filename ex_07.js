@@ -1,17 +1,16 @@
-const fruits = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"];
+fruits = ["Blackberries", "Apple", "Banana", "Mango", "Peaches", "Kiwi"];
 
-
-function getFruitFromIndex(index) {
-   
-    if (index === -1) {
+function getFruitNameFromIndex(index) {
+    if (index === -1 || index === "last") {
         return fruits[fruits.length - 1];
     }
-    if (index < 0 || index >= fruits.length) {
+    if (isNaN(index) || index < 0 || index >= fruits.length) {
         return null;
     }
     return fruits[index];
 }
 
-function displayResult(result) {
-    console.log(result);
-}
+let result = getFruitNameFromIndex("last");
+displayResult(result);
+
+// La fonction retourne le fruit correspondant à l'index ou null si l'index est invalide.

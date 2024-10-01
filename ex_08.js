@@ -1,9 +1,18 @@
 fruits = ["Blackberries", "Mango", "Kiwi", "Peaches", "Strawberry"];
-function getFruit(parameter) {
-    if (typeof parameter === "string") {
-        return fruits.indexOf(parameter);
-    } else if (typeof parameter === "number") {
-        return fruits[parameter] !== undefined ? fruits[parameter] : null;
+
+function getFruit(indexname) {
+    if (indexname === -1 || indexname === "last") {
+        return fruits[fruits.length - 1];
     }
-    return null;
+    if (typeof indexname === 'string') {
+        let index = fruits.indexOf(indexname);
+        return index !== -1 ? index : null;
+    } else if (typeof indexname === 'number') {
+        return fruits[indexname] || null;
+    } else {
+        return null;
+    }
 }
+
+// La fonction retourne le fruit ou son index selon le paramètre fourni, ou null si non trouvé.
+displayResult(getFruit("Mango"));

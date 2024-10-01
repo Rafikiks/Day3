@@ -1,27 +1,29 @@
 function getBasketContent() {
+    let fruits = [];
     
-    const fruits = [
-        { name: 'strawberry', quantity: 3 },
-        { name: 'apple', quantity: 2 },
-        { name: 'lime', quantity: 2 },
-        { name: 'peach', quantity: 1 },
-        { name: 'pear', quantity: 2 }
-    ];
-
-   
-    let fruitList = [];
-    fruits.forEach(fruit => {
-        for (let i = 0; i < fruit.quantity; i++) {
-            fruitList.push(fruit.name.toLowerCase())
-        }
-    });
-
+    for (let nbfruits = 0; nbfruits < 3; nbfruits++) {
+        fruits.push('strawberry');
+    }
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('apple');
+    }
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('lime');
+    }
     
-    console.log(`${fruitList.length} fruit(s) selected`)
-
+    fruits.push('peach');
     
-    return fruitList
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('pear');
+    }
+
+    console.log(fruits.length + ' fruit(s) selected');
+    return fruits;
 }
 
+if (typeof getBasketContent === "function") {
+    const fruits = getBasketContent();
+    showMyBasket(fruits);
+}
 
-getBasketContent()
+// La fonction retourne un panier de fruits avec le nombre total affiché.

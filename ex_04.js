@@ -1,20 +1,29 @@
-let a = 2
-let b = 4
-let action = "sub"
+function getBasketContent() {
+    let fruits = [];
+    
+    for (let nbfruits = 0; nbfruits < 3; nbfruits++) {
+        fruits.push('strawberry');
+    }
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('apple');
+    }
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('lime');
+    }
+    
+    fruits.push('peach');
+    
+    for (let nbfruits = 0; nbfruits < 2; nbfruits++) {
+        fruits.push('pear');
+    }
 
-function addtion() {
-	return a + b 
+    console.log(fruits.length + ' fruit(s) selected');
+    return fruits;
 }
 
-function substraction (){
-	return a - b
+if (typeof getBasketContent === "function") {
+    const fruits = getBasketContent();
+    showMyBasket(fruits);
 }
-function calculator () {
-	if (action === "add") {
-  return addition()
-  }else if (action === "sub") {
-  	return substraction ()
-  }else {
-  	return 0
-  }
-}
+
+// La fonction retourne un panier de fruits avec le nombre total affiché.

@@ -1,3 +1,4 @@
+fruits = ["Blackberries", "Apple", "Banana", "Mango", "Peaches", "Kiwi"];
 function getIndexFromName(name) {
     // Cherche l'index du fruit dans le tableau
     const index = fruits.indexOf(name);

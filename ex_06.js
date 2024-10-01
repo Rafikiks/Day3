@@ -1,17 +1,13 @@
 fruits = ["Blackberries", "Apple", "Banana", "Mango", "Peaches", "Kiwi"];
-function getIndexFromName(name) {
-    // Cherche l'index du fruit dans le tableau
-    const index = fruits.indexOf(name);
 
-    // Si le fruit est trouvé, retourne l'index, sinon retourne null
-    if (index !== -1) {
-        return index;
-    } else {
+function getIndexFromName(name) {
+    let index = fruits.indexOf(name);
+    if (index === -1) {
         return null;
     }
+    return index;
 }
 
-// Fonction pour afficher le résultat
-function displayResult(result) {
-    console.log(result);
-}
+displayResult(getIndexFromName("Kiwi"));
+
+// La fonction retourne l'index du fruit s'il est trouvé, sinon elle retourne null.
